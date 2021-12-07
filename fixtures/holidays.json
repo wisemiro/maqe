@@ -1,0 +1,42 @@
+{
+    "total_day": 15,
+    "total_day_left": 7,
+    "total_day_used": 8,
+    "leave_requests": [
+        {
+            "status": "pending",
+            "request_list": [
+                {
+                    "date": "2021-03-30",
+                    "type": "remote"
+                },
+                {
+                    "date": "2021-03-29",
+                    "type": "personal_leave"
+                },
+                {
+                    "date": "2021-03-28",
+                    "type": "personal_leave"
+                }
+            ]
+        },
+        {
+            "status": "approved",
+            "request_list": [
+                {
+                    "date": "2021-03-31",
+                    "type": "switch_holiday"
+                }
+            ]
+        },
+        {
+            "status": "canceled",
+            "request_list": [
+                {
+                    "date": "2021-04-01",
+                    "type": "sick_leave"
+                }
+            ]
+        }
+    ]
+}
