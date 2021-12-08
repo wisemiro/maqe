@@ -37,6 +37,24 @@
                     "type": "sick_leave"
                 }
             ]
+        },
+        {
+            "status": "canceled",
+            "request_list": [
+                {
+                    "date": "2021-04-01",
+                    "type": "sick_leave"
+                }
+            ]
+        },
+        {
+            "status": "canceled",
+            "request_list": [
+                {
+                    "date": "2021-04-01",
+                    "type": "sick_leave"
+                }
+            ]
         }
     ]
 }
