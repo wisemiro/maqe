@@ -278,7 +278,14 @@ class _HomeState extends State<Home> {
     final DateFormat firstDayformatter = DateFormat('dd MMM yyyy');
     final String firstDay = firstDayformatter.format(firstDate);
 
-    //var newMap = groupBy(leaveRequest.requestList, (obj) => obj['type']);
+    var newMap =
+        groupBy(leaveRequest.requestList, (RequestList p) => p.type.toString());
+  //TODO: check for duplicate data and return dates by type
+
+    // if (newMap.keys.length > 1 ) {
+    //   print(newMap.keys.first);
+    // }
+
 
     //Change the card color if the status is "cancled"
     var cardColor = Colors.white;
