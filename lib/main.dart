@@ -4,6 +4,7 @@ import 'package:maqe/nav-bar/home/bloc_observer.dart';
 import 'package:maqe/nav-bar/home/blocs/bloc/read_json_bloc.dart';
 import 'package:maqe/nav-bar/home/service_locator.dart';
 import 'package:maqe/nav-bar/nav-bar.dart';
+import 'package:maqe/theme/colors.dart';
 
 void main() {
   setup();
@@ -12,7 +13,6 @@ void main() {
   );
 
   runApp(BlocProvider(
-
     create: (context) => ReadJsonBloc()..add(ReadJson()),
     child: MyApp(),
   ));
@@ -23,9 +23,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Maqe Test',
       theme: ThemeData(
         primarySwatch: Colors.blue,
+        iconTheme: IconThemeData(color: MaqeColor.iconColor),
+        backgroundColor: MaqeColor.background
       ),
       home: NavBar(),
     );
