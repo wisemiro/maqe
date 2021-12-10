@@ -278,15 +278,37 @@ class _HomeState extends State<Home> {
     final DateFormat firstDayformatter = DateFormat('dd MMM yyyy');
     final String firstDay = firstDayformatter.format(firstDate);
 
-    var newMap =
-        groupBy(leaveRequest.requestList, (RequestList p) => p.type.toString());
-  //TODO: check for duplicate data and return dates by type
+    var newMap = groupBy(leaveRequest.requestList, (RequestList p) => p.type);
+    
+    void main() {
+      // Values from map
+      var values = newMap; //listify
+      var assignment = {};
+      var length = values.length;
+      var key = 0;
+      for (var value in values) {
+        assignment[key++] = value;
+      }
 
-    // if (newMap.keys.length > 1 ) {
-    //   print(newMap.keys.first);
-    // }
+      var set = new Set();
+      var duplicate = false;
+      // Only for statistics purpose
+      var statistics = 0;
+      for (var value in assignment.values) {
+        statistics++;
+        if (!set.add(value)) {
+          print(value);
+          duplicate = true;
+          break;
+        }
+      }
 
+      print("Duplicate: $duplicate");
+      print("Performed in ${statistics} iteration(s) from $length possible");
+    }
 
+    main();
+  
     //Change the card color if the status is "cancled"
     var cardColor = Colors.white;
     if (leaveRequest.status == "canceled") {
